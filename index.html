@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html class="scroll-smooth antialiased" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Ali Ashar Shafique | AI Engineer &amp; ML Specialist</title>
+  <meta name="description" content="Portfolio of Ali Ashar Shafique — AI Engineer &amp; Machine Learning Specialist building production RAG systems, event-driven architectures, and deterministic data platforms."/>
+  <meta name="author" content="Ali Ashar Shafique"/>
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS v3 with Forms and Container Queries -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+            },
+            surface: {
+              DEFAULT: '#0a0d14',
+              subtle: '#0f141f',
+              card: '#141b2a',
+              cardHover: '#192235',
+              border: '#1e293b',
+              borderHover: '#334155',
+              muted: '#64748b',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Subtle engineering dot pattern */
+    .bg-grid-subtle {
+      background-color: #0a0d14;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    /* Clean subtle top gradient */
+    .hero-glow {
+      background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+    }
+
+    /* Human-centered UI elements */
+    .card-base {
+      background-color: #111726;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card-base:hover {
+      border-color: rgba(96, 165, 250, 0.35);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Tag styles */
+    .tech-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      padding: 0.22rem 0.65rem;
+      border-radius: 0.375rem;
+      background-color: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      line-height: 1;
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-grid-subtle text-slate-200 font-sans min-h-screen selection:bg-brand-500 selection:text-white">
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-surface/85 border-b border-surface-border">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Monogram & Title -->
+      <a href="#home" class="flex items-center gap-3.5 group" aria-label="Ali Ashar Shafique - Back to top">
+        <div class="w-10 h-10 rounded-lg bg-surface-card border border-surface-border group-hover:border-brand-500/50 flex items-center justify-center transition-colors">
+          <span class="font-mono text-sm font-bold text-brand-400 group-hover:text-white transition-colors">AS</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-sm text-slate-100 tracking-tight leading-snug">Ali Ashar Shafique</span>
+          <span class="text-[11px] font-mono text-slate-400">AI / ML Engineer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300" aria-label="Main Navigation">
+        <a href="#about" class="hover:text-brand-400 transition-colors">About</a>
+        <a href="#experience" class="hover:text-brand-400 transition-colors">Experience</a>
+        <a href="#projects" class="hover:text-brand-400 transition-colors">Projects</a>
+        <a href="#skills" class="hover:text-brand-400 transition-colors">Skills</a>
+        <a href="#education" class="hover:text-brand-400 transition-colors">Education</a>
+        <a href="#contact" class="hover:text-brand-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="Ali_Ashar_Resume.pdf" download="Ali_Ashar_Resume.pdf" class="text-xs font-mono font-medium px-4 py-2 rounded-lg bg-surface-card border border-surface-border text-slate-300 hover:text-white hover:border-slate-500 transition-all flex items-center gap-2" title="Download Ali Ashar's Resume PDF">
+          <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span>CV / Resume</span>
+        </a>
+        <a href="#contact" class="text-xs font-semibold px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white transition-colors">
+          Get in Touch
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" class="md:hidden p-2 rounded-lg bg-surface-card border border-surface-border text-slate-300 hover:text-white" aria-label="Toggle navigation menu">
+        <svg id="menu-icon-bars" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <nav id="mobile-nav" class="hidden md:hidden border-t border-surface-border bg-surface px-6 py-5 space-y-4 text-sm font-medium">
+      <a href="#about" class="block text-slate-300 hover:text-brand-400 mobile-nav-link">About</a>
+      <a href="#experience" class="block text-slate-300 hover:text-brand-400 mobile-nav-link">Experience</a>
+      <a href="#projects" class="block text-slate-300 hover:text-brand-400 mobile-nav-link">Projects</a>
+      <a href="#skills" class="block text-slate-300 hover:text-brand-400 mobile-nav-link">Skills</a>
+      <a href="#education" class="block text-slate-300 hover:text-brand-400 mobile-nav-link">Education</a>
+      <a href="#contact" class="block text-slate-300 hover:text-brand-400 mobile-nav-link">Contact</a>
+      <div class="pt-3 border-t border-surface-border flex gap-3">
+        <a href="Ali_Ashar_Resume.pdf" download="Ali_Ashar_Resume.pdf" class="flex-1 text-center py-2 text-xs font-mono rounded bg-surface-card border border-surface-border text-slate-200">
+          Download CV
+        </a>
+        <a href="#contact" class="flex-1 text-center py-2 text-xs font-semibold rounded bg-brand-600 text-white">
+          Contact
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 flex flex-col gap-28">
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="home" class="pt-14 sm:pt-20 pb-4 relative hero-glow">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Concise, Authentic Developer Introduction -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Availability Badge -->
+          <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-surface-card border border-surface-border text-xs text-slate-300">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="font-mono text-[11px] text-emerald-400 font-medium">Available for AI Engineer Roles</span>
+            <span class="text-slate-500">•</span>
+            <span class="text-slate-400">Lahore / Remote</span>
+          </div>
+
+          <!-- Headline -->
+          <div class="space-y-3">
+            <h1 class="text-3xl sm:text-5xl lg:text-5xl font-extrabold text-slate-100 tracking-tight leading-[1.15]">
+              AI Engineer building production RAG &amp; intelligent data platforms.
+            </h1>
+            <p class="text-base sm:text-lg text-slate-400 leading-relaxed max-w-2xl font-normal">
+              I’m <span class="text-slate-100 font-semibold">Ali Ashar Shafique</span>. I design and ship end-to-end machine learning applications — connecting high-throughput data ingestion, vector retrieval pipelines, and async FastAPI services with responsive frontends.
+            </p>
+          </div>
+
+          <!-- Real-world Quick Capabilities -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1 text-xs">
+            <div class="p-3 rounded-lg bg-surface-card/60 border border-surface-border">
+              <span class="block font-mono text-brand-400 font-semibold mb-0.5">RAG &amp; LLMs</span>
+              <span class="text-slate-400">ChromaDB, Groq Llama 3.3, local LLM orchestration</span>
+            </div>
+            <div class="p-3 rounded-lg bg-surface-card/60 border border-surface-border">
+              <span class="block font-mono text-brand-400 font-semibold mb-0.5">Backend &amp; APIs</span>
+              <span class="text-slate-400">Async FastAPI, PostgreSQL, SQLAlchemy 2.0, WebSockets</span>
+            </div>
+            <div class="p-3 rounded-lg bg-surface-card/60 border border-surface-border">
+              <span class="block font-mono text-brand-400 font-semibold mb-0.5">Data Engineering</span>
+              <span class="text-slate-400">Airflow orchestration, DuckDB, Polars, Docker setup</span>
+            </div>
+          </div>
+
+          <!-- CTAs and Social Links -->
+          <div class="pt-2 flex flex-wrap items-center gap-4">
+            <a href="#projects" class="px-5 py-2.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold transition-all flex items-center gap-2">
+              <span>View Selected Work</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </a>
+            <a href="Ali_Ashar_Resume.pdf" download="Ali_Ashar_Resume.pdf" class="px-5 py-2.5 rounded-lg bg-surface-card hover:bg-surface-cardHover border border-surface-border hover:border-slate-500 text-slate-200 text-sm font-medium transition-all flex items-center gap-2">
+              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              <span>Download Resume</span>
+            </a>
+            
+            <div class="flex items-center gap-2 ml-auto text-slate-400">
+              <a href="https://github.com/ALI22ASHAR" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg hover:text-white hover:bg-surface-card transition-colors" title="GitHub Profile" aria-label="GitHub Profile">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path></svg>
+              </a>
+              <a href="https://linkedin.com/in/ali-ashar-shafique" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg hover:text-white hover:bg-surface-card transition-colors" title="LinkedIn Profile" aria-label="LinkedIn Profile">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0-.01-3.28 1.64 1.64 0 0 0 .01 3.28m-1.39 9.74h2.79v-8.37H5.07v8.37Z"></path></svg>
+              </a>
+              <a href="mailto:aliasharshafique.pc@gmail.com" class="p-2.5 rounded-lg hover:text-white hover:bg-surface-card transition-colors" title="Email Direct" aria-label="Email Direct">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Authentic Portrait & Professional Profile Card -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="relative w-full max-w-sm">
+            <!-- Framing Card -->
+            <div class="rounded-2xl p-2 bg-surface-card border border-surface-border shadow-2xl">
+              <div class="relative aspect-[4/5] rounded-xl overflow-hidden bg-surface-subtle">
+                <img 
+                  src="ali_ashar_portrait.jpg" 
+                  alt="Ali Ashar Shafique - AI Engineer" 
+                  class="w-full h-full object-cover object-top filter contrast-[1.02] hover:scale-[1.02] transition-transform duration-500"
+                />
+                
+                <!-- Bottom Profile Overlay -->
+                <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-surface via-surface/80 to-transparent">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <p class="text-sm font-bold text-white leading-snug">Ali Ashar Shafique</p>
+                      <p class="text-xs text-slate-300 font-mono">BS Computer Science • UMT</p>
+                    </div>
+                    <span class="tech-pill bg-brand-500/20 text-brand-300 border-brand-500/30">
+                      AI / ML
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Meta Footer -->
+              <div class="px-3 py-3 grid grid-cols-2 gap-2 text-xs text-slate-400 font-mono">
+                <div>
+                  <span class="text-[10px] text-slate-500 uppercase block">Education</span>
+                  <span class="text-slate-300 text-xs">BSCS, 2022–2026</span>
+                </div>
+                <div>
+                  <span class="text-[10px] text-slate-500 uppercase block">Location</span>
+                  <span class="text-slate-300 text-xs">Lahore, PK</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section id="about" class="scroll-mt-24 space-y-8">
+      <div class="space-y-2">
+        <span class="text-xs font-mono font-medium text-brand-400 uppercase tracking-widest">About Me</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-100 tracking-tight">Engineering with Purpose &amp; Reliability</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <!-- Main Narrative Left -->
+        <div class="lg:col-span-7 space-y-5 text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p>
+            I am a Computer Science graduate from the <span class="text-slate-100 font-medium">University of Management and Technology (UMT)</span> in Lahore. Over the past few years, I’ve found my sweet spot building at the intersection of practical machine learning, asynchronous backend systems, and data engineering.
+          </p>
+          <p>
+            I got started with data science by digging into real, messy datasets — like analyzing thousands of police crime records during my internship at Knowatech. That experience taught me that the hardest part of applied AI isn’t downloading a model; it’s building reliable data ingestion, cleaning noisy inputs, and ensuring systems behave predictably in the real world.
+          </p>
+          <p>
+            Today, I focus on building complete AI-driven systems end to end. Whether that means architecting a sub-second RAG search over legal dossiers, streaming real-time crime incidents to police dispatchers over WebSockets, or pairing deterministic query engines like DuckDB with LLMs to eliminate numerical hallucinations.
+          </p>
+        </div>
+
+        <!-- Authentic Developer Notes Right (Human, Conversational, Not Robotic) -->
+        <div class="lg:col-span-5 space-y-4 border-l border-surface-border pl-6 sm:pl-8">
+          <span class="text-xs font-mono text-slate-400 uppercase tracking-wider block font-semibold">What I Value in Code</span>
+          
+          <div class="space-y-4 text-xs sm:text-sm text-slate-300">
+            <div class="space-y-1">
+              <h3 class="font-semibold text-slate-100 text-sm">Math in databases, reasoning in models</h3>
+              <p class="text-slate-400 leading-relaxed font-normal">
+                Models should never do mental arithmetic. I delegate aggregations to DuckDB or SQL where accuracy is 100%, and let LLMs do what they’re great at — language and reasoning.
+              </p>
+            </div>
+
+            <div class="space-y-1">
+              <h3 class="font-semibold text-slate-100 text-sm">Traceable &amp; verifiable answers</h3>
+              <p class="text-slate-400 leading-relaxed font-normal">
+                In sensitive domains like legal or law enforcement, confidence without citations is dangerous. Every generation needs direct source chunk grounding.
+              </p>
+            </div>
+
+            <div class="space-y-1">
+              <h3 class="font-semibold text-slate-100 text-sm">Full-stack accountability</h3>
+              <p class="text-slate-400 leading-relaxed font-normal">
+                I take pride in owning features all the way through — from database migrations and OCR parsing to async API endpoints and crisp UI interactions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== WORK EXPERIENCE ==================== -->
+    <section id="experience" class="scroll-mt-24 space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div class="space-y-2">
+          <span class="text-xs font-mono font-medium text-brand-400 uppercase tracking-widest">Engineering History</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-100 tracking-tight">Work Experience</h2>
+        </div>
+        <p class="text-xs text-slate-400 max-w-sm">Direct engineering contributions in machine learning, crime reporting analytics, and enterprise data auditing.</p>
+      </div>
+
+      <!-- Chronological Experience Timeline -->
+      <div class="space-y-6">
+        
+        <!-- Experience 1: Big Brains -->
+        <article class="card-base rounded-xl p-6 sm:p-7 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 border-b border-surface-border pb-4">
+            <div>
+              <h3 class="text-lg font-bold text-slate-100">Machine Learning &amp; Generative AI</h3>
+              <p class="text-sm font-medium text-brand-400">Big Brains <span class="text-slate-500">•</span> Lahore, Pakistan</p>
+            </div>
+            <span class="text-xs font-mono text-slate-400 bg-surface px-2.5 py-1 rounded border border-surface-border self-start">
+              08/2026 – 09/2026
+            </span>
+          </div>
+          <ul class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed list-disc list-inside">
+            <li>Researched and evaluated generative AI and LLM-based approaches, benchmarking model outputs against specialized domain datasets to inform implementation decisions on applied use cases.</li>
+            <li>Built and optimized automated data preprocessing pipelines in Python to clean, deduplicate, and structure raw unstructured inputs for downstream training and retrieval workflows.</li>
+          </ul>
+          <div class="pt-2 flex flex-wrap gap-2">
+            <span class="tech-pill">Generative AI</span>
+            <span class="tech-pill">LLM Benchmarking</span>
+            <span class="tech-pill">Data Pipelines</span>
+            <span class="tech-pill">Python</span>
+          </div>
+        </article>
+
+        <!-- Experience 2: Knowatech -->
+        <article class="card-base rounded-xl p-6 sm:p-7 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 border-b border-surface-border pb-4">
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg font-bold text-slate-100">Data Science Intern</h3>
+                <span class="tech-pill bg-emerald-500/10 text-emerald-400 border-emerald-500/20 font-mono text-[10px]">+35% Efficiency</span>
+              </div>
+              <p class="text-sm font-medium text-brand-400">Knowatech <span class="text-slate-500">•</span> Lahore, Pakistan</p>
+            </div>
+            <span class="text-xs font-mono text-slate-400 bg-surface px-2.5 py-1 rounded border border-surface-border self-start">
+              08/2025 – 09/2025
+            </span>
+          </div>
+          <ul class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed list-disc list-inside">
+            <li>Engineered a crime reporting and analytics system processing <strong class="text-slate-100">2,000+ First Information Report (FIR) records</strong>, improving complaint-tracking turnaround efficiency by 35%.</li>
+            <li>Cleaned and transformed 2,000+ rows of crime event telemetry using Python (Pandas, NumPy) and Excel, isolating historical hotspot patterns and crime categories for analytical dashboards.</li>
+            <li>Developed Flask-based backend REST endpoints powering interactive data visualization dashboards and automated reporting workflows utilized by analytics teams.</li>
+          </ul>
+          <div class="pt-2 flex flex-wrap gap-2">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">Pandas / NumPy</span>
+            <span class="tech-pill">Flask REST API</span>
+            <span class="tech-pill">FIR Telemetry</span>
+            <span class="tech-pill">Analytics Dashboards</span>
+          </div>
+        </article>
+
+        <!-- Experience 3: Dev Hub -->
+        <article class="card-base rounded-xl p-6 sm:p-7 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 border-b border-surface-border pb-4">
+            <div>
+              <h3 class="text-lg font-bold text-slate-100">Data Science Intern</h3>
+              <p class="text-sm font-medium text-brand-400">Dev Hub <span class="text-slate-500">•</span> Lahore, Pakistan</p>
+            </div>
+            <span class="text-xs font-mono text-slate-400 bg-surface px-2.5 py-1 rounded border border-surface-border self-start">
+              03/2025 – 05/2025
+            </span>
+          </div>
+          <ul class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed list-disc list-inside">
+            <li>Conducted exploratory data analysis (EDA), feature engineering, and predictive modeling using Python and SQL to support business forecasting for client portfolios.</li>
+            <li>Designed automated KPI dashboards that eliminated manual report compilation and granted business stakeholders real-time visibility into growth metrics.</li>
+          </ul>
+          <div class="pt-2 flex flex-wrap gap-2">
+            <span class="tech-pill">EDA</span>
+            <span class="tech-pill">Predictive Modeling</span>
+            <span class="tech-pill">SQL</span>
+            <span class="tech-pill">Feature Engineering</span>
+            <span class="tech-pill">KPI Reporting</span>
+          </div>
+        </article>
+
+        <!-- Experience 4: Fauji Fertilizer Company Ltd. -->
+        <article class="card-base rounded-xl p-6 sm:p-7 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 border-b border-surface-border pb-4">
+            <div>
+              <h3 class="text-lg font-bold text-slate-100">Information Systems Intern</h3>
+              <p class="text-sm font-medium text-brand-400">Fauji Fertilizer Company Ltd. <span class="text-slate-500">•</span> Lahore, Pakistan</p>
+            </div>
+            <span class="text-xs font-mono text-slate-400 bg-surface px-2.5 py-1 rounded border border-surface-border self-start">
+              07/2024 – 08/2024
+            </span>
+          </div>
+          <ul class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed list-disc list-inside">
+            <li>Supported enterprise operational systems across IT, HR, Finance, and Sales units within one of Pakistan's premier fertilizer and industrial conglomerates.</li>
+            <li>Audited and consolidated <strong class="text-slate-100">1,000+ internal operational records</strong>, streamlining workflow handoffs and verifying multi-department record integrity.</li>
+          </ul>
+          <div class="pt-2 flex flex-wrap gap-2">
+            <span class="tech-pill">Enterprise Systems</span>
+            <span class="tech-pill">Data Auditing</span>
+            <span class="tech-pill">Record Verification</span>
+            <span class="tech-pill">ERP Workflows</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== FEATURED PROJECTS ==================== -->
+    <section id="projects" class="scroll-mt-24 space-y-16">
+      <div class="space-y-2">
+        <span class="text-xs font-mono font-medium text-brand-400 uppercase tracking-widest">Engineering Showcase</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-100 tracking-tight">Featured Projects</h2>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-2xl">
+          Detailed technical implementations across real-time crime intelligence, retrieval-augmented generation (RAG), deterministic BI engines, and automated data pipelines.
+        </p>
+      </div>
+
+      <!-- ================= Project 1: Nigehban (Hero Project) ================= -->
+      <article class="card-base rounded-2xl overflow-hidden border border-surface-border hover:border-brand-500/40">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+          
+          <!-- Details Left -->
+          <div class="lg:col-span-6 p-7 sm:p-9 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="flex items-center gap-2">
+                <span class="tech-pill bg-brand-500/10 text-brand-300 border-brand-500/20">FLAGSHIP APPLICATION</span>
+                <span class="tech-pill bg-emerald-500/10 text-emerald-400 border-emerald-500/20">LIVE WEBSOCKET</span>
+              </div>
+              
+              <h3 class="text-2xl sm:text-3xl font-bold text-slate-100 tracking-tight leading-snug">
+                Nigehban — Real-Time Crime Monitoring Platform
+              </h3>
+
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Full-stack crime intelligence platform built for Punjab Police tracking <strong class="text-slate-100">4,200+ FIR records</strong>, <strong class="text-slate-100">364 officers</strong>, and <strong class="text-slate-100">36 police stations</strong> across a 6-level administrative hierarchy.
+              </p>
+
+              <!-- Technical Decisions Breakdown -->
+              <div class="space-y-2 pt-2 text-xs">
+                <div class="p-3 rounded-lg bg-surface/70 border border-surface-border">
+                  <span class="font-mono text-slate-200 font-medium block">Real-time Stream Engine</span>
+                  <p class="text-slate-400 mt-0.5">WebSocket incident feed with a background scheduler broadcasting statistically weighted events every 8 seconds based on historical crime distributions.</p>
+                </div>
+                <div class="p-3 rounded-lg bg-surface/70 border border-surface-border">
+                  <span class="font-mono text-slate-200 font-medium block">Frontend &amp; Geospatial Analytics</span>
+                  <p class="text-slate-400 mt-0.5">React 19 + TypeScript with Leaflet mapping, TanStack Query, and Recharts rendering 6+ live KPI trend monitors.</p>
+                </div>
+                <div class="p-3 rounded-lg bg-surface/70 border border-surface-border">
+                  <span class="font-mono text-slate-200 font-medium block">Persistence &amp; Deployment</span>
+                  <p class="text-slate-400 mt-0.5">5-table PostgreSQL schema with Alembic migrations, async SQLAlchemy 2.0 sessions, and one-command Docker Compose setup.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-surface-border flex flex-wrap items-center justify-between gap-4">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="tech-pill">FastAPI (Async)</span>
+                <span class="tech-pill">SQLAlchemy 2.0</span>
+                <span class="tech-pill">PostgreSQL</span>
+                <span class="tech-pill">React 19</span>
+                <span class="tech-pill">TypeScript</span>
+                <span class="tech-pill">Leaflet</span>
+                <span class="tech-pill">Docker</span>
+              </div>
+              <a href="https://github.com/ALI22ASHAR/Nigehban" target="_blank" rel="noopener noreferrer" class="text-xs font-mono font-medium px-4 py-2 rounded-lg bg-surface hover:bg-surface-card border border-surface-border hover:border-slate-400 text-slate-200 flex items-center gap-2 transition-colors">
+                <svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path></svg>
+                <span>github.com/ALI22ASHAR/Nigehban</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- UI Mockup / Dashboard Preview Right -->
+          <div class="lg:col-span-6 bg-surface-subtle border-t lg:border-t-0 lg:border-l border-surface-border flex flex-col justify-center p-4 sm:p-6">
+            <!-- Clean Window Frame -->
+            <div class="rounded-xl overflow-hidden border border-surface-border bg-surface shadow-xl">
+              <!-- Window Chrome -->
+              <div class="px-4 py-2.5 bg-surface border-b border-surface-border flex items-center justify-between text-xs font-mono text-slate-400">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                </div>
+                <span class="text-[11px] text-slate-500 truncate">nigehban.punjab-police.telemetry.local</span>
+                <span class="text-[10px] text-emerald-400 font-mono flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+              <!-- Actual Dashboard Image -->
+              <div class="relative bg-surface">
+                <img 
+                  src="nigehban_dashboard.png" 
+                  alt="Nigehban Crime Monitoring Intelligence Platform Dashboard" 
+                  class="w-full h-auto object-cover filter contrast-[1.02]"
+                />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- ================= Project 2: Investigation Intelligence Platform (Architecture Deep-Dive) ================= -->
+      <article class="card-base rounded-2xl p-7 sm:p-10 space-y-8 border border-surface-border">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-surface-border pb-6">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="tech-pill bg-brand-500/10 text-brand-300 border-brand-500/20">RAG ARCHITECTURE</span>
+              <span class="tech-pill">OCR &amp; NLP INGESTION</span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-slate-100 tracking-tight">
+              Investigation Intelligence Platform
+            </h3>
+          </div>
+          <a href="https://github.com/ALI22ASHAR/Investigation-Intelligence-Platform" target="_blank" rel="noopener noreferrer" class="text-xs font-mono font-medium px-4 py-2 rounded-lg bg-surface hover:bg-surface-card border border-surface-border hover:border-slate-400 text-slate-200 flex items-center gap-2 transition-colors self-start sm:self-auto">
+            <svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path></svg>
+            <span>View Source Code</span>
+          </a>
+        </div>
+
+        <p class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-4xl">
+          Architected a sovereign, full-stack Retrieval-Augmented Generation (RAG) platform to analyze unstructured legal case files, evidentiary records, and court documents. The platform combines automated document ingestion, dense vector semantic search, and local LLM reasoning to generate source-grounded findings with verifiable citations and zero data leakage.
+        </p>
+
+        <!-- Technical Pipeline Flow -->
+        <div class="space-y-3">
+          <span class="text-xs font-mono font-medium text-slate-400 uppercase tracking-wider block">End-to-End System Pipeline</span>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs font-mono">
+            
+            <div class="p-4 rounded-xl bg-surface/80 border border-surface-border space-y-2">
+              <span class="text-brand-400 font-semibold block text-xs">01 / OCR Ingestion</span>
+              <p class="text-slate-400 font-sans leading-relaxed">
+                Tesseract OCR and regex/NLP entity extraction parse raw scanned case dossiers into structured text chunks with metadata headers.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-surface/80 border border-surface-border space-y-2">
+              <span class="text-brand-400 font-semibold block text-xs">02 / Vector Embeddings</span>
+              <p class="text-slate-400 font-sans leading-relaxed">
+                Chunk embeddings generated and indexed into ChromaDB vector collections, paired with PostgreSQL for conversation metadata.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-surface/80 border border-surface-border space-y-2">
+              <span class="text-brand-400 font-semibold block text-xs">03 / Async FastAPI Pipeline</span>
+              <p class="text-slate-400 font-sans leading-relaxed">
+                FastAPI with Pydantic validation handles similarity search, context window assembling, and local LLM generation.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-surface/80 border border-surface-border space-y-2">
+              <span class="text-brand-400 font-semibold block text-xs">04 / Cited Chat UI</span>
+              <p class="text-slate-400 font-sans leading-relaxed">
+                React chat client displaying multi-thread history, expandable source citations, confidence indicators, and readiness polling.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="pt-2 flex flex-wrap gap-2">
+          <span class="tech-pill">FastAPI</span>
+          <span class="tech-pill">ChromaDB</span>
+          <span class="tech-pill">Local LLM / Ollama</span>
+          <span class="tech-pill">Tesseract OCR</span>
+          <span class="tech-pill">Pydantic</span>
+          <span class="tech-pill">PostgreSQL</span>
+          <span class="tech-pill">React UI</span>
+          <span class="tech-pill">Docker</span>
+        </div>
+      </article>
+
+      <!-- ================= Project 3 & 4: Metric-Mind & Bizionary (Side-by-Side Dual Showcase) ================= -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Project 3: Metric-Mind -->
+        <article class="card-base rounded-2xl p-7 flex flex-col justify-between space-y-6 border border-surface-border">
+          <div class="space-y-4">
+            <!-- Window mockup with real image -->
+            <div class="rounded-xl overflow-hidden border border-surface-border bg-surface">
+              <div class="px-3 py-2 bg-surface border-b border-surface-border flex items-center justify-between text-[11px] font-mono text-slate-500">
+                <span>metricmind.bi-engine.local</span>
+                <span class="text-brand-400">Zero Hallucination</span>
+              </div>
+              <img 
+                src="metricmind_dashboard.png" 
+                alt="Metric-Mind AI Business Intelligence Dashboard" 
+                class="w-full h-48 object-cover filter contrast-[1.02]"
+              />
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="tech-pill bg-brand-500/10 text-brand-300 border-brand-500/20">DETERMINISTIC BI</span>
+                <span class="tech-pill">DUCKDB &amp; POLARS</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-100">Metric-Mind: AI Business Intelligence Platform</h3>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Production-grade BI engine combining deterministic DuckDB and Polars query aggregations with LLM reasoning. Solves numerical inaccuracy by delegating mathematical operations to columnar engines while LLMs formulate queries and summarize strategic insights.
+              </p>
+            </div>
+
+            <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside">
+              <li>Universal KPI Builder dynamically computing complex business margins.</li>
+              <li>Automated dataset profiling with column distribution analytics.</li>
+              <li>Natural language interface with strict validation against SQL injection.</li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-surface-border flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="tech-pill">DuckDB</span>
+              <span class="tech-pill">Polars</span>
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">LLM Reasoning</span>
+            </div>
+            <a href="https://github.com/ALI22ASHAR/Metric-Mind" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-brand-400 hover:text-white flex items-center gap-1 transition-colors">
+              <span>View Code</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4: Bizionary (FYP) -->
+        <article class="card-base rounded-2xl p-7 flex flex-col justify-between space-y-6 border border-surface-border">
+          <div class="space-y-4">
+            <!-- Window mockup with real image -->
+            <div class="rounded-xl overflow-hidden border border-surface-border bg-surface">
+              <div class="px-3 py-2 bg-surface border-b border-surface-border flex items-center justify-between text-[11px] font-mono text-slate-500">
+                <span>bizionary.erp-analytics.internal</span>
+                <span class="text-amber-400">Groq Llama 3.3</span>
+              </div>
+              <img 
+                src="bizionary_dashboard.jpg" 
+                alt="Bizionary AI ERP Intelligence Dashboard" 
+                class="w-full h-48 object-cover filter contrast-[1.02]"
+              />
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="tech-pill bg-amber-500/10 text-amber-300 border-amber-500/20">FINAL YEAR PROJECT</span>
+                <span class="tech-pill">EVENT-DRIVEN ERP</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-100">Bizionary: AI-Enabled ERP System for SMEs</h3>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Full-stack, decoupled business intelligence and resource planning suite. Features a React (Vite) dashboard with Recharts, stateless Django REST APIs with JWT authentication, Pandas Excel report parser, and Django Signals triggering real-time atomic updates.
+              </p>
+            </div>
+
+            <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside">
+              <li>Embedded Groq-powered (Llama 3.3) assistant with function calling to query live database state.</li>
+              <li>Atomic ledger and inventory synchronization preserving transactional double-entry integrity.</li>
+              <li>Decoupled modular architecture allowing independent service deployment.</li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-surface-border flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="tech-pill">Django REST</span>
+              <span class="tech-pill">Llama 3.3</span>
+              <span class="tech-pill">React (Vite)</span>
+              <span class="tech-pill">Django Signals</span>
+            </div>
+            <a href="https://github.com/ALI22ASHAR/FYP-Bizionary" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-brand-400 hover:text-white flex items-center gap-1 transition-colors">
+              <span>View Code</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- ================= Additional Technical Projects (Data Engineering & Dynamic Web) ================= -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+        
+        <!-- Project 5: Airflow ETL -->
+        <article class="card-base rounded-xl p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-brand-400 uppercase tracking-wider font-semibold">Data Engineering</span>
+              <span class="tech-pill text-[10px]">Airflow DAG</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-100">Automated Sales ETL Pipeline &amp; Dashboard</h4>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              End-to-end automated ETL pipeline processing raw sales records using Python, Pandas, and SQLite, scheduled and orchestrated via Apache Airflow. Paired with a Streamlit interface visualizing KPI trends and product distribution.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-surface-border flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="tech-pill">Apache Airflow</span>
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">SQLite</span>
+              <span class="tech-pill">Streamlit</span>
+            </div>
+            <a href="https://github.com/ALI22ASHAR/-Sales-Data-Pipeline-with-Airflow-Streamlit" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-slate-300 hover:text-brand-400 flex items-center gap-1.5 transition-colors">
+              <span>Repository</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 6: Dynamic Django Portfolio Engine -->
+        <article class="card-base rounded-xl p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-brand-400 uppercase tracking-wider font-semibold">Full-Stack Web</span>
+              <span class="tech-pill text-[10px]">Django Dynamic CMS</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-100">Database-Driven Portfolio Engine</h4>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Dynamic developer portfolio engine powered by the Django framework. Designed with relational database models to manage technical projects, skill taxonomy, and interactive contact submissions dynamically through admin panels.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-surface-border flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="tech-pill">Django</span>
+              <span class="tech-pill">PostgreSQL / SQLite</span>
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Semantic HTML</span>
+            </div>
+            <a href="https://github.com/ALI22ASHAR/My_Portfolio-Term-Project-" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-slate-300 hover:text-brand-400 flex items-center gap-1.5 transition-colors">
+              <span>Repository</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS & TECHNICAL STACK ==================== -->
+    <section id="skills" class="scroll-mt-24 space-y-10">
+      <div class="space-y-2">
+        <span class="text-xs font-mono font-medium text-brand-400 uppercase tracking-widest">Ecosystem &amp; Tooling</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-100 tracking-tight">Technical Stack &amp; Competencies</h2>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-xl">
+          Structured by domain. Every technology listed has been actively used in production or applied project implementations.
+        </p>
+      </div>
+
+      <!-- Clean 3-Column Engineering Matrix (No Spinning Toy Orbits) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Group 1: Machine Learning & Generative AI -->
+        <div class="card-base rounded-xl p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-surface-border pb-3">
+            <h3 class="text-sm font-bold text-slate-100 font-mono">01 / ML &amp; Generative AI</h3>
+            <span class="text-[10px] text-brand-400 font-mono">Core Focus</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Architecting retrieval systems, vector database indices, document parsing, and local/hosted LLM pipelines.
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between py-1 border-b border-surface-border/50">
+              <span class="text-slate-300 font-medium">RAG Architectures</span>
+              <span class="text-slate-400 font-mono text-[11px]">ChromaDB, Semantic Chunking</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-surface-border/50">
+              <span class="text-slate-300 font-medium">LLM Integration</span>
+              <span class="text-slate-400 font-mono text-[11px]">Groq (Llama 3.3), Ollama, APIs</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-surface-border/50">
+              <span class="text-slate-300 font-medium">Deep Learning Frameworks</span>
+              <span class="text-slate-400 font-mono text-[11px]">PyTorch, TensorFlow</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-surface-border/50">
+              <span class="text-slate-300 font-medium">Machine Learning Core</span>
+              <span class="text-slate-400 font-mono text-[11px]">Scikit-learn, Feature Engineering</span>
+            </div>
+            <div class="flex justify-between py-1">
+              <span class="text-slate-300 font-medium">Vision &amp; NLP</span>
+              <span class="text-slate-400 font-mono text-[11px]">Tesseract OCR, Tokenization</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 2: Backend & Systems -->
+        <div class="card-base rounded-xl p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-surface-border pb-3">
+            <h3 class="text-sm font-bold text-slate-100 font-mono">02 / Backend &amp; Architecture</h3>
+            <span class="text-[10px] text-brand-400 font-mono">High Performance</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Building asynchronous microservices, relational schemas, secure session authentication, and live streaming.
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between py-1 border-b border-surface-border/50">
+              <span class="text-slate-300 font-medium">FastAPI</span>
+              <span class="text-slate-400 font-mono text-[11px]">Async endpoints, Pydantic v2</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-surface-border/50">
+              <span class="text-slate-300 font-medium">SQLAlchemy 2.0 &amp; Postgres</span>
+              <span class="text-slate-400 font-mono text-[11px]">Async sessions, Alembic</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-surface-border/50">
+              <span class="text-slate-300 font-medium">Django &amp; Django REST</span>
+              <span class="text-slate-400 font-mono text-[11px]">Django Signals, JWT Auth</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-surface-border/50">
+              <span class="text-slate-300 font-medium">WebSockets</span>
+              <span class="text-slate-400 font-mono text-[11px]">Real-time incident streaming</span>
+            </div>
+            <div class="flex justify-between py-1">
+              <span class="text-slate-300 font-medium">Flask</span>
+              <span class="text-slate-400 font-mono text-[11px]">Lightweight analytics APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 3: Data Engineering & Analytics -->
+        <div class="card-base rounded-xl p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-surface-border pb-3">
+            <h3 class="text-sm font-bold text-slate-100 font-mono">03 / Data Engineering</h3>
+            <span class="text-[10px] text-brand-400 font-mono">ETL &amp; Analytics</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Data pipeline orchestration, columnar analytical querying, aggregation, and business intelligence dashboards.
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between py-1 border-b border-surface-border/50">
+              <span class="text-slate-300 font-medium">Apache Airflow</span>
+              <span class="text-slate-400 font-mono text-[11px]">Scheduled DAGs, TaskFlow</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-surface-border/50">
+              <span class="text-slate-300 font-medium">DuckDB &amp; Polars</span>
+              <span class="text-slate-400 font-mono text-[11px]">In-process OLAP, zero hallucination</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-surface-border/50">
+              <span class="text-slate-300 font-medium">Pandas &amp; NumPy</span>
+              <span class="text-slate-400 font-mono text-[11px]">Vectorized data cleaning</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-surface-border/50">
+              <span class="text-slate-300 font-medium">Databases</span>
+              <span class="text-slate-400 font-mono text-[11px]">PostgreSQL, SQLite</span>
+            </div>
+            <div class="flex justify-between py-1">
+              <span class="text-slate-300 font-medium">BI &amp; Visualization</span>
+              <span class="text-slate-400 font-mono text-[11px]">Power BI, Tableau, Streamlit</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Secondary Row: Frontend & Tools -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Frontend & UI -->
+        <div class="card-base rounded-xl p-6 space-y-3">
+          <h3 class="text-sm font-bold text-slate-100 font-mono">04 / Frontend &amp; Interactive Interfaces</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Creating responsive, data-dense interfaces with real-time charting and geospatial mapping.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span class="tech-pill">React 19</span>
+            <span class="tech-pill">TypeScript</span>
+            <span class="tech-pill">Vite</span>
+            <span class="tech-pill">Tailwind CSS</span>
+            <span class="tech-pill">Leaflet (Maps)</span>
+            <span class="tech-pill">Recharts</span>
+            <span class="tech-pill">TanStack Query</span>
+          </div>
+        </div>
+
+        <!-- DevOps & Platforms -->
+        <div class="card-base rounded-xl p-6 space-y-3">
+          <h3 class="text-sm font-bold text-slate-100 font-mono">05 / DevOps &amp; Development Tooling</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Containerizing multi-service architectures and managing disciplined version control.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span class="tech-pill">Docker</span>
+            <span class="tech-pill">Docker Compose</span>
+            <span class="tech-pill">Git / GitHub</span>
+            <span class="tech-pill">Linux / Bash</span>
+            <span class="tech-pill">Jupyter Notebooks</span>
+            <span class="tech-pill">Postman API Testing</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== EDUCATION & CERTIFICATIONS ==================== -->
+    <section id="education" class="scroll-mt-24 space-y-8">
+      <div class="space-y-2">
+        <span class="text-xs font-mono font-medium text-brand-400 uppercase tracking-widest">Academic &amp; Professional Qualifications</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-100 tracking-tight">Education &amp; Certifications</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Education Column -->
+        <div class="lg:col-span-6 space-y-4">
+          <h3 class="text-sm font-bold text-slate-300 font-mono uppercase tracking-wider">Formal Education</h3>
+
+          <!-- Degree 1 -->
+          <div class="card-base rounded-xl p-6 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="tech-pill bg-brand-500/10 text-brand-300 border-brand-500/20">Bachelor's Degree</span>
+              <span class="text-xs font-mono text-slate-400">08/2022 – 07/2026</span>
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-slate-100">University of Management and Technology (UMT)</h4>
+              <p class="text-xs sm:text-sm font-medium text-brand-400">Bachelor of Science in Computer Science (BSCS)</p>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Lahore, Pakistan • Comprehensive curriculum focused on Artificial Intelligence, Machine Learning, Data Structures, Relational Database Management, and Software Architecture.
+            </p>
+          </div>
+
+          <!-- Degree 2 -->
+          <div class="card-base rounded-xl p-6 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="tech-pill">Intermediate</span>
+              <span class="text-xs font-mono text-slate-400">01/2019 – 08/2021</span>
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-slate-100">Government College University (GCU)</h4>
+              <p class="text-xs sm:text-sm font-medium text-brand-400">Intermediate in Computer Science (ICS)</p>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Lahore, Pakistan • Foundational study in Advanced Mathematics, Physics, and Algorithmic Thinking.
+            </p>
+          </div>
+        </div>
+
+        <!-- Certifications Column -->
+        <div class="lg:col-span-6 space-y-4">
+          <h3 class="text-sm font-bold text-slate-300 font-mono uppercase tracking-wider">Accredited Certifications</h3>
+
+          <div class="space-y-3">
+            
+            <!-- Cert 1: IBM -->
+            <div class="card-base rounded-xl p-4 flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-surface flex items-center justify-center shrink-0 border border-surface-border text-brand-400 font-mono font-bold text-xs">
+                IBM
+              </div>
+              <div class="space-y-0.5">
+                <h4 class="text-sm font-bold text-slate-100">Data Science Professional Certificate</h4>
+                <p class="text-xs text-slate-300">Introduction to DevOps &amp; Generative AI</p>
+                <span class="text-[10px] text-slate-500 font-mono">Issued by IBM</span>
+              </div>
+            </div>
+
+            <!-- Cert 2: DeepLearning.AI -->
+            <div class="card-base rounded-xl p-4 flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-surface flex items-center justify-center shrink-0 border border-surface-border text-brand-400 font-mono font-bold text-xs">
+                DL.AI
+              </div>
+              <div class="space-y-0.5">
+                <h4 class="text-sm font-bold text-slate-100">Linear Algebra &amp; Calculus for ML</h4>
+                <p class="text-xs text-slate-300">Mathematics for Machine Learning &amp; AI for Everyone</p>
+                <span class="text-[10px] text-slate-500 font-mono">Issued by DeepLearning.AI</span>
+              </div>
+            </div>
+
+            <!-- Cert 3: NVIDIA Whizlabs -->
+            <div class="card-base rounded-xl p-4 flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-surface flex items-center justify-center shrink-0 border border-surface-border text-emerald-400 font-mono font-bold text-xs">
+                NV
+              </div>
+              <div class="space-y-0.5">
+                <h4 class="text-sm font-bold text-slate-100">Large Language Models &amp; AI Deployment</h4>
+                <p class="text-xs text-slate-300">Production LLM inference, quantization, and deployment patterns</p>
+                <span class="text-[10px] text-slate-500 font-mono">NVIDIA Whizlabs</span>
+              </div>
+            </div>
+
+            <!-- Cert 4: Deloitte -->
+            <div class="card-base rounded-xl p-4 flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-surface flex items-center justify-center shrink-0 border border-surface-border text-purple-400 font-mono font-bold text-xs">
+                DLT
+              </div>
+              <div class="space-y-0.5">
+                <h4 class="text-sm font-bold text-slate-100">Data Analytics Job Simulation</h4>
+                <p class="text-xs text-slate-300">Business intelligence and analytical modeling simulation</p>
+                <span class="text-[10px] text-slate-500 font-mono">Deloitte</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="scroll-mt-24 space-y-8">
+      <div class="card-base rounded-2xl p-8 sm:p-12 border border-surface-border text-center max-w-4xl mx-auto space-y-8">
+        
+        <div class="space-y-3 max-w-2xl mx-auto">
+          <span class="text-xs font-mono font-medium text-brand-400 uppercase tracking-widest">Get In Touch</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
+            Let's Discuss AI Engineering &amp; ML Opportunities
+          </h2>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            I am actively interviewing for AI Engineer, Machine Learning Developer, and Data Science roles. Whether you have an open position or want to discuss RAG architectures, feel free to reach out.
+          </p>
+        </div>
+
+        <!-- Contact Links Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto text-left">
+          
+          <!-- Email Card -->
+          <a href="mailto:aliasharshafique.pc@gmail.com" class="p-4 rounded-xl bg-surface hover:bg-surface-card border border-surface-border hover:border-brand-500/50 transition-all flex items-center gap-3.5 group">
+            <div class="w-10 h-10 rounded-lg bg-surface-card flex items-center justify-center text-brand-400 shrink-0 group-hover:scale-105 transition-transform">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+            <div class="overflow-hidden">
+              <span class="text-[10px] text-slate-500 font-mono uppercase block">Direct Email</span>
+              <span class="text-xs sm:text-sm text-slate-200 font-medium truncate block">aliasharshafique.pc@gmail.com</span>
+            </div>
+          </a>
+
+          <!-- Phone Card -->
+          <a href="tel:+923096372764" class="p-4 rounded-xl bg-surface hover:bg-surface-card border border-surface-border hover:border-brand-500/50 transition-all flex items-center gap-3.5 group">
+            <div class="w-10 h-10 rounded-lg bg-surface-card flex items-center justify-center text-brand-400 shrink-0 group-hover:scale-105 transition-transform">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-500 font-mono uppercase block">Phone / WhatsApp</span>
+              <span class="text-xs sm:text-sm text-slate-200 font-medium block">+92 309 6372764</span>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Social Action Buttons -->
+        <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
+          <a href="https://linkedin.com/in/ali-ashar-shafique" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-lg bg-surface-card hover:bg-surface-cardHover border border-surface-border hover:border-slate-400 text-xs sm:text-sm font-medium text-slate-200 flex items-center gap-2 transition-colors">
+            <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0-.01-3.28 1.64 1.64 0 0 0 .01 3.28m-1.39 9.74h2.79v-8.37H5.07v8.37Z"></path></svg>
+            <span>LinkedIn Profile</span>
+          </a>
+          <a href="https://github.com/ALI22ASHAR" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-lg bg-surface-card hover:bg-surface-cardHover border border-surface-border hover:border-slate-400 text-xs sm:text-sm font-medium text-slate-200 flex items-center gap-2 transition-colors">
+            <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path></svg>
+            <span>GitHub Repositories</span>
+          </a>
+          <a href="Ali_Ashar_Resume.pdf" download="Ali_Ashar_Resume.pdf" class="px-5 py-2.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-xs sm:text-sm font-semibold text-white flex items-center gap-2 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span>Download Resume PDF</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="mt-28 border-t border-surface-border bg-surface py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span>© 2026 Ali Ashar Shafique. AI Engineer &amp; ML Specialist.</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#home" class="hover:text-slate-300 transition-colors">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== INTERACTIVITY JAVASCRIPT ==================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileNav = document.getElementById('mobile-nav');
+      const menuIconBars = document.getElementById('menu-icon-bars');
+      const menuIconClose = document.getElementById('menu-icon-close');
+
+      if (mobileMenuBtn && mobileNav) {
+        mobileMenuBtn.addEventListener('click', () => {
+          const isExpanded = mobileNav.classList.toggle('hidden');
+          const expanded = !isExpanded;
+          mobileMenuBtn.setAttribute('aria-expanded', expanded.toString());
+          menuIconBars.classList.toggle('hidden', expanded);
+          menuIconClose.classList.toggle('hidden', !expanded);
+        });
+
+        // Close mobile menu on clicking any navigation link
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileNav.classList.add('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            menuIconBars.classList.remove('hidden');
+            menuIconClose.classList.add('hidden');
+          });
+        });
+      }
+
+      // Smooth scroll for anchor links with offset compensation
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#' || !targetId) return;
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
